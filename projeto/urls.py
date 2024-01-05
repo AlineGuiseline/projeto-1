@@ -21,7 +21,9 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('recipes.urls')) # será lido como dominio.com/ e serão incluídas as urls dentro de recipes (ex: dominio.com/sobre)
+    path('', include('recipes.urls')), # será lido como dominio.com/ e serão incluídas as urls dentro de recipes (ex: dominio.com/sobre)
+    path('authors/', include('authors.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
